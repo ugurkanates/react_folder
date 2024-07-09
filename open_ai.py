@@ -16,7 +16,7 @@ def check_openai_api_key(api_key):
 
 
 OPENAI_API_KEY = "sk......"
-model = 'gpt-4o'
+model = 'gpt-4'
 
 
 def client_setup(api_key=OPENAI_API_KEY):
@@ -86,7 +86,7 @@ def generator(client, prompt, max_tokens=None,output=None):
             except Exception as err:
                 print(f"Error: {err}")
                 break
-    return valid_responses
+    return valid_responses[0]
 # Check the validity of the API key
 api_key_valid = check_openai_api_key(api_key=OPENAI_API_KEY)
 print("API key is valid:", api_key_valid)
